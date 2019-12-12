@@ -2,8 +2,10 @@
 class EmptyUndoStackError(Exception):
     pass
 
+
 class EmptyRedoStackError(Exception):
     pass
+
 
 class CommandManager:
 
@@ -13,7 +15,7 @@ class CommandManager:
         self.redo_commands = []
 
     def push_undo_command(self, command):
-        self.undo_commads.append(command)
+        self.undo_commands.append(command)
 
     def pop_undo_command(self):
         try:
