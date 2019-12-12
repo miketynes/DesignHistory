@@ -42,7 +42,7 @@ One weakness of the current design is that bricks persist forever, even after th
 ## Installation and Usage
 To clone this code to your machine, just run `git clone http://www.github.com/miketynes/DesignHistory` from whatever directory you want my code to haunt forever. 
 
-Running the code requires only a `python3` interpreter. I used `python3.6.9` on an Ubuntu 18.04.1 system. 
+Running the code requires only a `python>=3.6.x` interpreter. I used `python3.6.9` on an Ubuntu 18.04.1 system.
 
 To run the tests, **from the project's root directory** run `python -m unittest discover test`
 
