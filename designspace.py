@@ -3,7 +3,8 @@
 
 """
 
-VERBOSE = True
+import logging
+logging.basicConfig(filename='designspace.log')
 
 
 class Singleton(type):
@@ -31,6 +32,9 @@ class DesignSpace(metaclass=Singleton):
     def __contains__(self, key):
         return key in self.bricks
 
+    def __getitem__(self, i):
+        return self.bricks[i]
+
     def add(self, brick, position, orientation):
 
         if brick in self:
@@ -40,9 +44,7 @@ class DesignSpace(metaclass=Singleton):
         brick.orientation = orientation
         self.bricks.append(brick)
 
-        logmsg =    f'Added brick {brick.id} to point {position} with rot {orientation}'
-        if VERBOSE:
-            print(logmsg)
+        logging.info(f'Added brick {brick.id} to point {position} with rot {orientation}')
 
     def move(self, brick, position, orientation):
 
@@ -52,22 +54,21 @@ class DesignSpace(metaclass=Singleton):
         brick.position = position
         brick.orientation = orientation
 
-        logmsg = f'Moved brick {brick.id}  to point {position} with rot {orientation}'
-        if VERBOSE:
-            print(logmsg)
+        logging.info(f'Moved brick {brick.id}  to point {position} with rot {orientation}')
 
     def delete(self, brick):
 
         if brick not in self:
             raise ValueError(f'Brick {brick.id} is not in design space')
-        logmsg = f'Removed brick {brick.id}'
-        if VERBOSE:
-            print(logmsg)
+        logging.info(f'Removed brick {brick.id}')
 
     def __hash__(self):
         """Make the whole design space hashable
 
-        This is so we can easily compare the states of the design space before and after changes
+        This exists so that we can compare states of the design space before and after operations
+        that should cancel one another, i.e. so that we can test the undo operation.
+        By using the hash, we can do this in a memory efficient way, rather than comparing the actual states.
+        (which, for large designs, would be very costly to save over time)
         """
         return hash(', '.join([str(hash(brick)) for brick in self]))
 
