@@ -21,7 +21,7 @@ For the program modules, working from low-level to high-level modules, we have
 | designcontroller.py |  `designcontroller.DesignController` executes the commands from `commands.py`, maintains undo/redo history, and provides `undo` and `redo` methods which operate globally over the design space's state.
 | design_interface.py | A thin wrapper to designcontroller.py which hides information for the user (i.e. other teams on the project).                                                                                                                      |
 
-You should read the modules from the top down or the bottom up, depending on your mood. Note that all modules, classes, and methods are documented inline with the code and demonstrated further in the test suites.
+You should read the modules from the top down or the bottom up, depending on your mood. Note that all modules, classes, and methods are documented inline with the code and demonstrated further in the test suites. Note further that the test docs are easiest to read moving upwards from the lowest level.
 
 The test modules are all self-explanatory, with the exception of `test_design_space_ABC`, which just houses a common `setUp` method for multiple test
 suites (*ergo* it is not a *true* ABC, but this wording makes it more easily recognizable as relatively abstract). 
