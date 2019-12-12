@@ -21,7 +21,7 @@ For the program modules, working from low-level to high-level modules, we have
 | designcontroller.py |  `designcontroller.DesignController` executes the commands from `commands.py`, maintains undo/redo history, and provides `undo` and `redo` methods which operate globally over the design space's state.
 | design_interface.py | A thin wrapper to designcontroller.py which hides information for the user (i.e. other teams on the project).                                                                                                                      |
 
-You should read the modules from the top down or the bottom up, depending on your mood.
+You should read the modules from the top down or the bottom up, depending on your mood. Note that all modules, classes, and methods are documented inline with the code and demonstrated further in the test suites.
 
 The test modules are all self-explanatory, with the exception of `test_design_space_ABC`, which just houses a common `setUp` method for multiple test
 suites (*ergo* it is not a *true* ABC, but this wording makes it more easily recognizable as relatively abstract). 
@@ -34,7 +34,7 @@ To illustrate how this code works, I went with a sequence diagram that ilustrate
 
 You can see that all of the classes exist before the first call except for the Command Object (in this case an `AddBrickToDesign` objecT) which is created by the `design_interface.add()` method and persists afterwards. It will live in the undo or redo stack until it is overwritten and (presumably) picked up by the garbage collector. 
 
-Note that all modules, classes, and methods are documented inline with the code and demonstrated further in the test suites.
+Note again that all modules, classes, and methods are documented inline with the code and demonstrated further in the test suites.
 
 One weakness of the current design is that bricks persist forever, even after they are removed from the design. Not sure if we want garbage collection to worry about this since our program is interactive. This is a question for the entire group and cannot be addressed now.
 
