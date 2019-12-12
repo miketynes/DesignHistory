@@ -5,7 +5,7 @@
 Here I have written my code for my final assignment in Fordham's CISC 6100--software engineering. 
 
 The project is supposed to be a team project, but due to some lapses in communication and availability aligment, I ended up re-coding 
-portions of the assignment given to other teammates here. I would like to emphasize that ***This is not the fault of my teammates*** it is simply a fault of circumstance. Had I communicated my needs sooner, and/or gotten started on this sooner, all of our code would be much more tighly integrated. Still, I think our discussions and API definitions were good enough that our code is mostly compatible, and the functionality therein could be merged without too much effort.
+portions of the assignment given to other teammates here. I would like to emphasize that ***This is not the fault of my teammates*** it is simply a fault of circumstance. Had I communicated my needs sooner, and/or gotten started on this sooner, all of our code would be much more tightly integrated. Still, I think our discussions and API definitions were good enough that our code is mostly compatible, and the functionality therein could be merged without too much effort.
 
 ## Overview
 
