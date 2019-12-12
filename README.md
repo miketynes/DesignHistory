@@ -67,3 +67,9 @@ To run the tests, **from the project's root directory** run `python -m unittest 
 | `design_interface.redo(n)`                            |              |                                                                                             |                                                        |
 |                                                       | `parameters` | `n` an integer: the number of elements of the redo stack to redo. Default = 1.              | Redo the past `n` undo operations in the design space. |
 |                                                       | `raises`     | `EmptyRedoStackError` if you try to redo more items than are in the undo stack              |                                                        |
+
+
+
+## References
+
+I am endebtted greatly to the authors of [this book](https://www.amazon.com/Mastering-Python-Design-Patterns-efficient/dp/1788837487/ref=asc_df_1788837487/?tag=hyprod-20&linkCode=df0&hvadid=312125971120&hvpos=1o1&hvnetw=g&hvrand=16377437313703902702&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9004164&hvtargid=aud-829758849484:pla-593980414514&psc=1&tag=&ref=&adgrpid=61316180839&hvpone=&hvptwo=&hvadid=312125971120&hvpos=1o1&hvnetw=g&hvrand=16377437313703902702&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=9004164&hvtargid=aud-829758849484:pla-593980414514) (paricularly Chapter 10 on the Command Pattern) as well as [this blog post](https://derdon.github.io/blog/implementing-an-undo-redo-manager-in-python.html) which I drew inspiration from heavily
