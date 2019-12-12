@@ -35,6 +35,10 @@ class DesignSpace(metaclass=Singleton):
     def __getitem__(self, i):
         return self.bricks[i]
 
+    def reset(self):
+        logging.info('Resetting designSpace to empty')
+        self.bricks = []
+
     def add(self, brick, position, orientation):
 
         if brick in self:
@@ -60,6 +64,8 @@ class DesignSpace(metaclass=Singleton):
 
         if brick not in self:
             raise ValueError(f'Brick {brick.id} is not in design space')
+
+        self.bricks.remove(brick)
         logging.info(f'Removed brick {brick.id}')
 
     def __hash__(self):
