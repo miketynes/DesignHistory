@@ -1,3 +1,9 @@
+"""Implements the BARE minimum for the code I needed to write to manage history/undo/redo. It does NOT
+handle snapping bricks together by pegs/tubes. Other code, (Danah's and Austin's) should handle something like that.
+
+This is just what I needed to get my own code running because I didn't have theirs in time. If we all coded reasonable
+swapping their code into here should be trivial.
+"""
 
 class Brick:
     """A very simple Brick class"""
@@ -12,15 +18,6 @@ class Brick:
         self._alpha = None
         self._beta = None
         self._gamma = None
-
-    def __hash__(self):
-        """Make bricks hashable
-
-
-        Just the hash of the stringified list of stringified properties.
-        This should be collision free... right?
-        """
-        return hash(', '.join(map(str, [self.id, self._x, self._y, self._z, self._alpha, self._beta, self._gamma])))
 
     @property
     def position(self):
