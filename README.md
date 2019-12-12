@@ -8,12 +8,13 @@ portions of the assignment given to other teammates here.
 
 For the program modules, working from low-level to high-level modules, we have
 
-| Module             | Description                                                                                                            |
-|--------------------|------------------------------------------------------------------------------------------------------------------------|
-| brick.py           |  The simplest design unit.   A brick has an ID, a position and an orientation.                                         |
-| designspace.py     |  A singleton container for bricks to live inside of.   Supports add, move, and delete operations.                      |
-| commands.py        |  A command-pattern wrapper to the interface to designspace.DesignSpace.    This allows operations to be neatly undone. |
-| command_manager.py |  A controller object which executes the commands from commands.py.   This maintains and manages undo/redo history.     |
+| Module              | Description                                                                                                                                                                                                                        |
+|---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| brick.py            |  `brick.Brick` is the simplest design unit.   A brick has an ID, a position and an orientation.                                                                                                                                                     |
+| designspace.py      |  `designspace.design` is singleton container for bricks to live inside of.   Supports add, move, and delete operations.                                                                                                                                  |
+| commands.py         |  Provides three command pattern wrappers to `designspace.design`: `AddBrickToDesign`, `MoveBrickInDesign`, and `DeleteBrickFromDesign`. These allow operations to be neatly undone                                                                                                            |
+| designcontroller.py |  `designcontroller.DesignController` executes the commands from commands.py, maintains undo/redo history, and provides `undo` and `redo` methods which are global to the design space state. 
+| design_interface.py | A thin wrapper to designcontroller.py which hides information for the user (i.e. other teams on the project).                                                                                                                      |
 
 
 You should read the modules and their assocuated tests in this order.
@@ -29,11 +30,3 @@ It has no dependencies as it is mostly just a high-level design demo.
 To run the tests, **from the project's root directory** run `python -m unittest discover test`. 
 
 ## API Reference
-
-The API used here will differ from that in my team documentaiton. This is because I chose to use the command pattern to implement the design space's
-move, add, and delete functionalities. Had we had time to discuss this both within my team and across the class teams, this would have
-made it into our API reference. Alas, it did not. 
-
-Further, using the command objects directly still may be abstracted far enough away from the actual design space code to use as our API, because the command 
-objects need to be executed by the `CommandManager` to for history to be maintained. Currently in my code, one passes a `Command` obect
-directly to the  `CommandManager`, which then executes the command and ...
