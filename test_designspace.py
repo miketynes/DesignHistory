@@ -46,14 +46,6 @@ class TestDesign(unittest.TestCase):
     def test_delete(self):
         pass
 
-    def test_hash(self):
-        """Test the design level hash function"""
-
-        # first, test that it works at all
-        self.assertIsInstance(hash(self.design), int)
-
-        empty_design_hash = hash(self.design)
-
 
 if __name__ == '__main__':
     unittest.main()
