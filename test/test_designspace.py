@@ -1,6 +1,5 @@
 import unittest
 
-from brick import Brick
 import designspace
 
 
