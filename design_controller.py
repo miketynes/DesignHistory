@@ -7,7 +7,7 @@ class EmptyRedoStackError(Exception):
     pass
 
 
-class CommandManager:
+class DesignController:
 
     def __init__(self):
 
