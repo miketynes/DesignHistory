@@ -32,7 +32,7 @@ To illustrate how this code works, I went with a sequence diagram that ilustrate
 
 ![Sequence diagram illustrating system functionality](pics/AddUndoRedo.vpd.png)
 
-You can see that all of the classes exist before the first call except for the Command Object (in this case an `AddBrickToDesign` objecT) which is created by the `design_interface.add()` method and persists afterwards. It will live in the undo or redo stack until it is overwritten and (presumably) picked up by the garbage collector. 
+You can see that all of the classes exist before the first call except for the Command Object (in this case an `AddBrickToDesign` object) which is created by the `design_interface.add()` method and persists afterwards. It will live in the undo or redo stack until it is overwritten and (presumably) picked up by the garbage collector. 
 
 Note again that all modules, classes, and methods are documented inline with the code and demonstrated further in the test suites.
 
