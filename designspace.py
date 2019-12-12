@@ -64,5 +64,12 @@ class DesignSpace(metaclass=Singleton):
         if VERBOSE:
             print(logmsg)
 
+    def __hash__(self):
+        """Make the whole design space hashable
+
+        This is so we can easily compare the states of the design space before and after changes
+        """
+        return hash(', '.join([str(hash(brick)) for brick in self]))
+
 
 design = DesignSpace()
