@@ -4,22 +4,8 @@ from brick import Brick
 import designspace
 
 
-class TestDesign(unittest.TestCase):
-
-    def setUp(self):
-        self.design = designspace.DesignSpace()
-
-        self.b1 = Brick('42')
-        self.b2 = Brick('42')
-
-        self.pos1 = [1, 2, 3]
-        self.pos2 = [4, 5, 6]
-
-        self.rot1 = [7, 8, 9]
-        self.rot2 = [10, 11, 12]
-
-    def tearDown(self):
-        self.design.reset()
+from test_designspace_ABC import TestDesignSpaceABC
+class TestDesign(TestDesignSpaceABC):
 
     def test_singletonness(self):
         """Make sure that this module's design and the one built in designspace are the same
