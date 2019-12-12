@@ -29,7 +29,7 @@ It has no dependencies as it is mostly just a high-level design demo.
 
 To clone the code, just run `git clone http://www.github.com/miketynes/DesignHistory` from whatever directory you want my code to haunt forever. 
 
-To run the tests, **from the project's root directory** run `python -m unittest discover test`. 
+To run the tests, **from the project's root directory** run `python -m unittest discover test`
 
 ## API reference
 
