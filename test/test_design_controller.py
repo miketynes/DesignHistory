@@ -1,3 +1,10 @@
+"""Test the design controller
+
+Again, we want to make sure things behave the same as when we used just the design methods or the Command objects.
+
+Additionally, we want to test the new undo/redo functionality.
+"""
+
 import unittest
 
 import design_controller
@@ -8,6 +15,10 @@ from test_designspace_ABC import TestDesignSpaceABC
 class TestCommandManager(TestDesignSpaceABC):
 
     def setUp(self):
+        """Set up for a test
+
+        calls super.setUp()
+        """
         super().setUp()
 
         self.controller = design_controller.DesignController()

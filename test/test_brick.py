@@ -7,6 +7,7 @@ import brick
 class TestBrick(unittest.TestCase):
 
     def setUp(self):
+        """Create come bricks and positions for testing"""
         self.b = brick.Brick('42')
         self.pos = [1, 2, 3]
         self.b.position = deepcopy(self.pos)

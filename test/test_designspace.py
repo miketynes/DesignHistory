@@ -1,9 +1,8 @@
 import unittest
 
 import designspace
-
-
 from test_designspace_ABC import TestDesignSpaceABC
+
 class TestDesign(TestDesignSpaceABC):
 
     def test_singletonness(self):
@@ -14,9 +13,11 @@ class TestDesign(TestDesignSpaceABC):
         self.assertIs(self.design, designspace.design)
 
     def test_add(self):
+        """Make sure add acts as expected"""
         self.design.add(self.b1, self.pos1, self.rot1)
         self.assertIs(self.design[0], self.b1)
         with self.assertRaises(ValueError):
+            # can't add a brick twice!
             self.design.add(self.b1, self.pos1, self.rot1)
 
     def test_move(self):
@@ -25,6 +26,7 @@ class TestDesign(TestDesignSpaceABC):
         self.assertEqual(self.design[0].position, self.pos2)
         self.assertEqual(self.design[0].orientation, self.rot2)
         with self.assertRaises(ValueError):
+            # cant move a brick that isn't added!
             self.design.move(self.b2, self.pos1, self.rot2)
 
     def test_delete(self):
@@ -32,13 +34,11 @@ class TestDesign(TestDesignSpaceABC):
         self.design.delete(self.b1)
         self.assertEqual(len(self.design), 0)
         with self.assertRaises(ValueError):
+            # cant delete a brick twice!
             self.design.delete(self.b1)
+            # or delete one that hasn't been added
+            self.design.delete(self.b2)
 
-    def test_hash(self):
-        """Test the design level hash function"""
-
-        # first, test that it works at all
-        self.assertIsInstance(hash(self.design), int)
 
 if __name__ == '__main__':
     unittest.main()

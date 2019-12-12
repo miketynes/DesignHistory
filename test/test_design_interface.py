@@ -1,3 +1,9 @@
+"""Test the top-level interface
+
+Since this is a thin wrapper to the design_controller module, the tests are more or less the same.
+We just want to make sure that the interface works as expected.
+"""
+
 import unittest
 
 import design_interface

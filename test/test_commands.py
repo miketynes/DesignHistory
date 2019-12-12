@@ -1,3 +1,12 @@
+"""Test Command Objects
+
+Overall, we want to test that the Command objects that invoke the designspace methods invoke them correctly.
+That is, you shoultn't really be able to tell if your're using the command object or the design methods directly
+except that with the Command objects you get the additional undo functionality, which we will also test here
+
+"""
+
+
 import unittest
 
 from test_designspace_ABC import TestDesignSpaceABC
@@ -10,6 +19,10 @@ design = designspace.design
 class TestCommands(TestDesignSpaceABC):
 
     def setUp(self):
+        """Set up for a test
+
+        calls super().setUp()
+        """
         super().setUp()
         self.add = AddBrickToDesign(self.b1, self.pos1, self.rot1)
         self.move1 = MoveBrickInDesign(self.b1, self.pos2, self.rot2)

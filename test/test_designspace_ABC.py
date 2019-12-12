@@ -7,6 +7,7 @@ import designspace
 class TestDesignSpaceABC(unittest.TestCase):
 
     def setUp(self):
+        """Common bricks, positions, and rotations for testing the designspace functionality from many angles"""
         self.design = designspace.DesignSpace()
 
         self.b1 = Brick('1')
@@ -19,4 +20,5 @@ class TestDesignSpaceABC(unittest.TestCase):
         self.rot2 = [10, 11, 12]
 
     def tearDown(self):
+        """Since the design is a singleton we have to reset it's state after every test"""
         self.design.reset()
