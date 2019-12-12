@@ -1,6 +1,5 @@
 import unittest
 
-from brick import Brick
 from test_designspace_ABC import TestDesignSpaceABC
 from commands import *
 import designspace
@@ -54,3 +53,7 @@ class TestCommands(TestDesignSpaceABC):
         # test undo
         self.delete.undo()
         self.assertEqual(self.design[0], self.b1)
+
+
+if __name__ == '__main__':
+    unittest.main()
