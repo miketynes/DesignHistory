@@ -1,7 +1,14 @@
-from copy import deepcopy
+"""Implement the Command Pattern around designspace.design add, move, and delete
+
+My understanding of the Command Pattern is greatly endebted to chapter 10 of this book:
+https://www.packtpub.com/application-development/mastering-python-design-patterns-second-edition
+
+All classes have three methods: __init__, execute(), and undo(). They maintain enough information
+to successfully undo themselves. They are not documented inline, as they are very short and clear.
+"""
 
 import designspace
-design = designspace.DesignSpace()
+design = designspace.design
 
 
 class AddBrickToDesign:
@@ -33,8 +40,8 @@ class MoveBrickInDesign:
 
     def execute(self):
         # save old positions immediately before moving
-        self.from_pos = deepcopy(self.brick.position)
-        self.from_rot = deepcopy(self.brick.orientation)
+        self.from_pos = self.brick.position
+        self.from_rot = self.brick.orientation
         design.move(self.brick, self.to_pos, self.to_rot)
 
     def undo(self):
