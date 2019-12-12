@@ -44,7 +44,7 @@ To clone this code to your machine, just run `git clone http://www.github.com/mi
 
 Running the code requires only a `python>=3.6.x` interpreter. I used `python3.6.9` on an Ubuntu 18.04.1 system.
 
-To run the tests, **from the project's root directory** run `python -m unittest discover test`
+To run the tests, **from the project's root directory** run `python -m unittest discover test` where `python` refers to an appropriate interpreter at least as recent as `3.6.x`. 
 
 ## API reference
 
